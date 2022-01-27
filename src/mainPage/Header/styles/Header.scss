@@ -1,0 +1,36 @@
+@mixin circle-icon {
+    background: grey;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 30px;
+    margin-right: 20px;
+    font-size: 10pxg;
+}
+header.mainpage-header {
+    position: relative;
+    width: 100%;
+    background: #f3f3f3;
+    display: flex;
+    padding: 15px;
+    justify-content: space-between;
+    align-items: center;
+    .input_search {
+        border: none;
+        outline: none;
+        background: transparent;
+        border-bottom: 1px solid black;
+        padding-left: 2px;
+        height: 30px;
+    }
+    .user-info-wrapper {
+        display: flex;
+        align-items: center;
+        .user-icon {
+            @include circle-icon;
+            margin-left: 10px
+        }
+    }
+}

@@ -1,0 +1,30 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.mainpage {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    .mainpage-left-side {
+        position: relative;
+        z-index: 0;
+    }
+    .mainpage-right-side {
+        position: relative;
+        width: 100%;
+        z-index: 1;
+        border-left: 1px solid black;
+    }
+    .mainpage-right-side_passive {
+        margin-left: 70px;
+        transition: margin-left 1s;
+    }
+    .mainpage-right-side_active {
+        margin-left: 200px;
+        transition: margin-left 1s;
+    }
+}
