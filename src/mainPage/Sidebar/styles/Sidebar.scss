@@ -31,14 +31,88 @@ aside.mainpage-sidebar {
                 margin-top: 10px;
                 display: flex;
                 align-items: center;
+                a {
+                    display: flex;
+                    text-decoration: none;
+                    align-items: center;
+                    color: black;
+                }
+                a.passive {
+                    pointer-events: none;
+                }
                 .item-icon {
                     @include circle-icon;
                 }
             }
             &__item:hover {
                 color: rgb(39, 171, 39);
+                a {
+                    color: rgb(39, 171, 39);
+                }
                 .item-icon {
                     background: pink;
+                }
+            }
+        }
+    }
+}
+@media (max-width: 576px) {
+    @mixin circle-icon-mobile {
+        background: grey;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 35px;
+        height: 35px;
+        border-radius: 35px;
+        margin-right: 10px;
+        font-size: 10px;
+    }
+    aside.mainpage-sidebar {
+        width: 160px;
+        padding: 10px;
+        position: fixed;
+        height: 100%;
+        background: #f3f3f3;
+        display: flex;
+        flex-direction: column;
+        font-size: 14px;
+        header.sidebar-header {
+            display: flex;
+            align-items: center;
+            .company-icon {
+                @include circle-icon-mobile;
+            }
+        }
+        nav.menu {
+            margin-top: 10px;
+            .menu-list {
+                &__item {
+                    cursor: pointer;
+                    margin-top: 10px;
+                    display: flex;
+                    align-items: center;
+                    a {
+                        display: flex;
+                        text-decoration: none;
+                        align-items: center;
+                        color: black;
+                    }
+                    a.passive {
+                        pointer-events: none;
+                    }
+                    .item-icon {
+                        @include circle-icon-mobile;
+                    }
+                }
+                &__item:hover {
+                    color: rgb(39, 171, 39);
+                    a {
+                        color: rgb(39, 171, 39);
+                    }
+                    .item-icon {
+                        background: pink;
+                    }
                 }
             }
         }
