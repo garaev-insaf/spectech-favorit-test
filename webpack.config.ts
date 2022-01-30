@@ -1,6 +1,8 @@
 import path from "path";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
 import HtmlWebpackPlugin from 'html-webpack-plugin';
+import CopyWebpackPlugin from 'copy-webpack-plugin';
+
 
 module.exports = {
     mode: 'production',
@@ -30,6 +32,28 @@ module.exports = {
                 test: /\.scss$/,
                 use: [{ loader: MiniCssExtractPlugin.loader }, "css-loader", "sass-loader"],
             },
+            {
+				test: /\.(png|jp(e*)g|svg|gif)$/,
+				use: [
+					{
+						loader: "file-loader",
+						options: {
+							name: "images/[hash]-[name].[ext]",
+						},
+					},
+				],
+			},
+			{
+				test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
+				use: [
+					{
+						loader: "file-loader",
+						options: {
+							name: "fonts/[hash]-[name].[ext]",
+						},
+					},
+				],
+			},
         ],
     },
     resolve: {
@@ -51,11 +75,25 @@ module.exports = {
         //     },
         // }),
         new HtmlWebpackPlugin({
-            template: path.join(__dirname, 'src', 'index.html')
-        })
+			template: "./public/index.html",
+			filename: "index.html",
+			inject: "body",
+		}),
+        new CopyWebpackPlugin({
+			patterns: [
+				{
+					from: path.resolve(__dirname, "./public/images"),
+					to: path.resolve(__dirname, "dist/images"),
+				},
+				// {
+				// 	from: path.resolve(__dirname, "./public/fonts"),
+				// 	to: path.resolve(__dirname, "dist/fonts"),
+				// },
+			],
+		}),
     ],
     devServer: {
-        static: path.join(__dirname, "build"),
+        // static: path.join(__dirname, "./public"),
         port: 3000,
         historyApiFallback: true,
         hot: true,

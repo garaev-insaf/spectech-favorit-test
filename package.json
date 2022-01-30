@@ -6,8 +6,12 @@
 		"build": "webpack --mode production"
 	},
 	"dependencies": {
+		"connected-react-router": "^6.9.2",
 		"react": "^17.0.2",
-		"react-dom": "^17.0.2"
+		"react-dom": "^17.0.2",
+		"react-redux": "^7.2.6",
+		"react-router-dom": "^6.2.1",
+		"redux-devtools-extension": "^2.13.9"
 	},
 	"devDependencies": {
 		"@babel/core": "^7.16.5",
@@ -25,15 +29,18 @@
 		"@typescript-eslint/eslint-plugin": "^5.8.1",
 		"@typescript-eslint/parser": "^5.8.1",
 		"babel-loader": "^8.2.3",
+		"copy-webpack-plugin": "^10.2.3",
 		"css-loader": "^6.5.1",
 		"eslint": "^8.5.0",
 		"eslint-plugin-html": "^6.2.0",
 		"eslint-plugin-react": "^7.28.0",
 		"eslint-plugin-react-hooks": "^4.3.0",
+		"file-loader": "^6.2.0",
 		"fork-ts-checker-webpack-plugin": "^6.5.0",
 		"html-webpack-plugin": "^5.5.0",
 		"mini-css-extract-plugin": "^2.5.2",
 		"node-sass": "^7.0.1",
+		"redux-thunk": "^2.4.1",
 		"sass": "^1.48.0",
 		"sass-loader": "^12.4.0",
 		"style-loader": "^3.3.1",

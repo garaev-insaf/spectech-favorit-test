@@ -1,9 +1,14 @@
 import * as React from "react";
 import "./styles/Sidebar.scss";
 
-const Sidebar = () => {
+const Sidebar = ({sidebarHoverState}) => {
+	const ClickLinkTo = (key) => {
+		history.push({
+			pathname: `/${key}`,
+		});
+	}
 	return (
-		<sidebar className="mainpage-sidebar">
+		<aside className="mainpage-sidebar">
 			<header className="sidebar-header">
 				<div className="company-icon">LOGO</div>
 				<div className="company-name">name company</div>
@@ -24,7 +29,7 @@ const Sidebar = () => {
 					</li>
 				</ul>
 			</nav>
-		</sidebar>
+		</aside>
 	);
 };
 export { Sidebar };

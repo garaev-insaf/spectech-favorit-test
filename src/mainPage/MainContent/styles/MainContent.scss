@@ -1,6 +1,86 @@
+main.mainpage-main::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+    background-color: #f9f9fd;
+}
+
+main.mainpage-main::-webkit-scrollbar-thumb {
+    width: 10px;
+    height: 10px;
+    border-radius: 10px;
+    background-color: #18aaaa;
+}
+
+main.mainpage-main::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    background-color: #f9f9fd;
+}
 main.mainpage-main {
-    width: 100%;
-    height: calc(100% - 60px);
+    position: relative;
+    overflow: auto;
+    white-space: nowrap;
     background: white;
-    overflow: visible;
+    display: flex;
+    flex-direction: column;
+    .row {
+        position: relative;
+        display: flex;
+        .sq_600px {
+            position: relative;
+            display: block;
+            min-width: 600px;
+            width: 600px;
+            height: 600px;
+            margin: 50px;
+        }
+        .sq_600px.red {
+            background: red;
+        }
+        .sq_600px.green {
+            background: green;
+        }
+        .sq_600px.blue {
+            background: blue;
+        }
+    }
+}
+
+// Далее, вычисляем высоту и ширину блока
+// 200px - ширина развернутого сайдбара
+// 70px - ширина неразвернутого сайдбара
+// 60px - высота хедера
+// 115px - высота развернутых фильтров
+// 20px - высота неразвернутого фильтра
+// 10px - ширина и высота вертикальных и горизонтальных скроллбаров
+main.mainpage-main_activeSide_activeFilter {
+    width: calc(100vw - 200px - 10px);
+    height: calc(100vh - 60px - 115px - 10px);
+    .row {
+        width: calc(100vw - 200px - 10px);
+    }
+}
+
+main.mainpage-main_activeSide_passiveFilter {
+    width: calc(100vw - 200px - 10px);
+    height: calc(100vh - 60px - 20px - 10px);
+    .row {
+        width: calc(100vw - 200px - 10px);
+    }
+}
+
+main.mainpage-main_passiveSide_activeFilter {
+    width: calc(100vw - 70px - 10px);
+    height: calc(100vh - 60px - 115px - 10px);
+    .row {
+        width: calc(100vw - 70px - 10px);
+    }
+}
+
+main.mainpage-main_passiveSide_passiveFilter {
+    width: calc(100vw - 70px - 10px);
+    height: calc(100vh - 60px - 20px - 10px);
+    .row {
+        width: calc(100vw - 70px - 10px);
+    }
 }

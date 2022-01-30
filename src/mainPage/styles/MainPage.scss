@@ -5,6 +5,7 @@
 }
 
 .mainpage {
+    overflow: hidden;
     display: flex;
     width: 100vw;
     height: 100vh;
@@ -15,6 +16,8 @@
     }
     .mainpage-right-side {
         position: relative;
+        display: flex;
+        flex-direction: column;
         width: 100%;
         z-index: 1;
         border-left: 1px solid black;
