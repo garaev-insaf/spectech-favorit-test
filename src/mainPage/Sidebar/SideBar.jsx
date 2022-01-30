@@ -3,11 +3,7 @@ import { Link } from "react-router-dom";
 import "./styles/Sidebar.scss";
 
 const Sidebar = ({ sidebarHoverState }) => {
-	const ClickLinkTo = (key) => {
-		history.push({
-			pathname: `/${key}`,
-		});
-	};
+
 	return (
 		<aside className="mainpage-sidebar">
 			<header className="sidebar-header">
